@@ -4,6 +4,48 @@
     box-sizing: border-box;
 }
 
+body {
+    cursor: none;
+    /* Hide the default cursor */
+}
+
+/* Cursor Elements */
+.cursor-dot,
+.cursor-circle {
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+/* Dot in the center */
+.cursor-dot {
+    width: 9px;
+    height: 9px;
+    background-color: #e65540;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: transform 0.1s ease;
+    /* Faster transition for dot */
+}
+
+/* Outer Circle with Background Color */
+.cursor-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #e65540;
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: 999;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+a:hover~.cursor-circle,
+button:hover~.cursor-circle {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+}
+
 .flex-container {
     display: flex;
     justify-content: space-between;
@@ -447,12 +489,15 @@ a {
 
 
 @media only screen and (max-width:600px) {
-    .hero-section-sub-btns,.terms-condition-items {
+
+    .hero-section-sub-btns,
+    .terms-condition-items {
         flex-direction: column;
     }
 
     .Latest-Ecosystem-news-itmes-btn-1,
-    .hero-section-main-text-items,.card-content {
+    .hero-section-main-text-items,
+    .card-content {
         width: 100%;
     }
 
@@ -465,10 +510,12 @@ a {
         text-align: center;
     }
 
-    h2,p {
+    h2,
+    p {
         text-align: center;
     }
-    .res-600{
+
+    .res-600 {
         text-align: center;
     }
 }
@@ -547,23 +594,29 @@ a {
     }
 }
 
-@media only screen and (max-width:441px){
-    .hero-section-main-text-h1,.res-441-1{
+@media only screen and (max-width:441px) {
+
+    .hero-section-main-text-h1,
+    .res-441-1 {
         font-size: 65px;
     }
-    .section-3-main-text,.section-6-main-text{
+
+    .section-3-main-text,
+    .section-6-main-text {
         font-size: 60px;
     }
-    .Latest-Ecosystem-news-itmes-text-h2{
+
+    .Latest-Ecosystem-news-itmes-text-h2 {
         font-size: 62px;
     }
-    .section-4-text-main-h2{
+
+    .section-4-text-main-h2 {
         font-size: 39px;
     }
 }
 
-@media only screen and (max-width:1142px){
-    .link-items{
+@media only screen and (max-width:1142px) {
+    .link-items {
         /* display: none; */
     }
 }
